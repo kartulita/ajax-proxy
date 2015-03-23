@@ -16,7 +16,7 @@
 		};
 
 		function requestDecorator(config) {
-			if (!/^(https?:)?:?\/\//.test(config.url)) {
+			if (!/^(https?:)?:?\/\//.test(config.url) || /localhost|127\.0\.0\.1/.test(config.url)) {
 				return config;
 			}
 			var url = config.url;
